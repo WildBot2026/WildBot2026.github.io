@@ -2,15 +2,18 @@
 """
 Fetch Bybit trading data for Raven Dashboard (GitHub Actions)
 Updates data.json with live balances, positions, and market data.
+Falls back gracefully if API calls fail.
 """
 import requests, json, os, hmac, hashlib, time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 BASE = 'https://api.bybit.com/v5'
-WILD_KEY = 'E3G3MbtVngOhRpHS6D'
-WILD_SECRET = 'skjTaRenp1Vlf4xF8vftEJ5DTwzYCQteKF7y'
-JOAKO_KEY = 'r0H7bCbFNwR7jQQc6x'
-JOAKO_SECRET = 'sJWEt8HjpyXhQf6iROn3DkV80HrYvmMclF8y'
+
+# Las API keys se pasan como secrets de GitHub Actions
+WILD_KEY = os.environ.get('WILD_API_KEY', 'E3G3MbtVngOhRpHS6D')
+WILD_SECRET = os.environ.get('WILD_API_SECRET', 'skjTaRenp1Vlf4xF8vftEJ5DTwzYCQteKF7y')
+JOAKO_KEY = os.environ.get('JOAKO_API_KEY', 'r0H7bCbFNwR7jQQc6x')
+JOAKO_SECRET = os.environ.get('JOAKO_API_SECRET', 'sJWEt8HjpyXhQf6iROn3DkV80HrYvmMclF8y')
 
 def bybit_get(api_key, api_secret, endpoint, params=None):
     if params is None: params = {}
@@ -20,16 +23,20 @@ def bybit_get(api_key, api_secret, endpoint, params=None):
     sig_str = ts + api_key + recv + qs
     sig = hmac.new(api_secret.encode(), sig_str.encode(), hashlib.sha256).hexdigest()
     
-    r = requests.get(f'{BASE}{endpoint}', 
-        headers={
-            'X-BAPI-API-KEY': api_key,
-            'X-BAPI-TIMESTAMP': ts,
-            'X-BAPI-SIGN': sig,
-            'X-BAPI-RECV-WINDOW': recv
-        }, params=params, timeout=15)
-    return r.json()
+    try:
+        r = requests.get(f'{BASE}{endpoint}', 
+            headers={
+                'X-BAPI-API-KEY': api_key,
+                'X-BAPI-TIMESTAMP': ts,
+                'X-BAPI-SIGN': sig,
+                'X-BAPI-RECV-WINDOW': recv
+            }, params=params, timeout=15)
+        return r.json()
+    except Exception as e:
+        print(f'WARNING: API call to {endpoint} failed: {e}')
+        return {'retCode': -1, 'retMsg': str(e)}
 
-def get_balance(api_key, api_secret, name):
+def get_balance(api_key, api_secret):
     data = bybit_get(api_key, api_secret, '/account/wallet-balance', {'accountType': 'UNIFIED'})
     equity = 0.0
     coins = []
@@ -37,6 +44,8 @@ def get_balance(api_key, api_secret, name):
         result = data['result']
         equity = float(result.get('totalEquity', 0))
         coins = result.get('list', [{}])[0].get('coin', [])
+    else:
+        print(f'  Balance error: {data.get("retMsg", "unknown")}')
     return equity, coins
 
 def get_positions(api_key, api_secret):
@@ -85,30 +94,22 @@ def get_top_movers():
     except: return []
 
 # ====== MAIN ======
-print('Fetching trading data...')
+print('Fetching trading data from Bybit...')
 
-# WILD balance
-wild_eq, wild_coins = get_balance(WILD_KEY, WILD_SECRET, 'WILD')
-wild_usdt = 0.0
-for c in wild_coins:
-    if c['coin'] == 'USDT':
-        wild_usdt = float(c.get('walletBalance', 0))
-        break
-wild_equity = wild_eq
+# WILD
+wild_eq, wild_coins = get_balance(WILD_KEY, WILD_SECRET)
+print(f'  WILD equity: ${wild_eq:.2f}')
 
-# JOAKO balance
-joako_eq, joako_coins = get_balance(JOAKO_KEY, JOAKO_SECRET, 'JOAKO')
-joako_usdt = 0.0
-for c in joako_coins:
-    if c['coin'] == 'USDT':
-        joako_usdt = float(c.get('walletBalance', 0))
-        break
-joako_equity = joako_eq
+# JOAKO
+joako_eq, joako_coins = get_balance(JOAKO_KEY, JOAKO_SECRET)
+print(f'  JOAKO equity: ${joako_eq:.2f}')
 
 total = wild_eq + joako_eq
 
 # Positions
-positions = get_positions(WILD_KEY, WILD_SECRET) + get_positions(JOAKO_KEY, JOAKO_SECRET)
+try:
+    positions = get_positions(WILD_KEY, WILD_SECRET) + get_positions(JOAKO_KEY, JOAKO_SECRET)
+except: positions = []
 
 # BTC
 btc = get_btc_info()
@@ -116,20 +117,18 @@ btc = get_btc_info()
 # Movers
 movers = get_top_movers()
 
-# Last trades from file (persistent across runs)
+# Last trades - load from file
 last_trades = []
-trades_file = 'trades.json'
-if os.path.exists(trades_file):
+if os.path.exists('trades.json'):
     try:
-        with open(trades_file) as f: last_trades = json.load(f)
+        with open('trades.json') as f: last_trades = json.load(f)
     except: pass
 
-# Capital history
+# Capital history - load from file
 capital_history = []
-history_file = 'capital_history.json'
-if os.path.exists(history_file):
+if os.path.exists('capital_history.json'):
     try:
-        with open(history_file) as f: capital_history = json.load(f)
+        with open('capital_history.json') as f: capital_history = json.load(f)
     except: pass
 
 # Add today's data point
@@ -138,14 +137,13 @@ if not capital_history or capital_history[-1]['date'] != today:
     capital_history.append({'date': today, 'capital': round(total, 2)})
 else:
     capital_history[-1]['capital'] = round(total, 2)
-# Keep max 30 days
 capital_history = capital_history[-30:]
 
 # Save history
-with open(history_file, 'w') as f:
+with open('capital_history.json', 'w') as f:
     json.dump(capital_history, f)
 
-# PnL calculation from history
+# PnL
 initial = capital_history[0]['capital'] if capital_history else 0
 pnl = total - initial
 pnl_pct = (pnl / initial * 100) if initial > 0 else 0
@@ -153,10 +151,10 @@ pnl_pct = (pnl / initial * 100) if initial > 0 else 0
 # Build output
 output = {
     'totalCapital': round(total, 2),
-    'wildCapital': round(wild_equity, 2),
-    'joakoCapital': round(joako_equity, 2),
-    'wildEquity': round(wild_equity, 2),
-    'joakoEquity': round(joako_equity, 2),
+    'wildCapital': round(wild_eq, 2),
+    'joakoCapital': round(joako_eq, 2),
+    'wildEquity': round(wild_eq, 2),
+    'joakoEquity': round(joako_eq, 2),
     'pnlCycle': round(pnl, 2),
     'pnlPercent': round(pnl_pct, 2),
     'openPositions': len(positions),
@@ -168,8 +166,7 @@ output = {
     'capitalHistory': capital_history
 }
 
-# Write data.json
 with open('data.json', 'w') as f:
     json.dump(output, f, indent=2)
 
-print(f'✅ Data updated: Total=${total:.2f} | WILD=${wild_equity:.2f} | JOAKO=${joako_equity:.2f} | Pos={len(positions)}')
+print(f'✅ Data saved: Total=${total:.2f} | WILD=${wild_eq:.2f} | JOAKO=${joako_eq:.2f}')
