@@ -5,29 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>🦅 Raven Trading Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #07070f; color: #e0e0e0; min-height: 100vh; overflow-x: hidden; }
-  
-  /* Background animation */
   body::before { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 50% 50%, rgba(102,126,234,0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(118,75,162,0.02) 0%, transparent 40%); z-index: -1; animation: bgFloat 20s ease-in-out infinite; }
   @keyframes bgFloat { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,-20px)} }
-
   .container { max-width: 1200px; margin: 0 auto; padding: 16px; }
-
-  /* Header */
   .header { display: flex; justify-content: space-between; align-items: center; padding: 12px 0 20px; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid #1a1a2e; margin-bottom: 20px; }
   .logo { display: flex; align-items: center; gap: 12px; }
   .logo h1 { font-size: 24px; background: linear-gradient(135deg, #667eea, #a78bfa, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .logo .badge { background: #1a1a3e; color: #a78bfa; font-size: 10px; padding: 2px 8px; border-radius: 4px; border: 1px solid #2a2a5a; }
   .header-right { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
   .last-update { color: #666; font-size: 12px; }
-  .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #4ade80; margin-right: 4px; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
-  .status-dot.offline { background: #f87171; animation: none; }
-
-  /* Hero section */
   .hero { background: linear-gradient(135deg, #0f0f2a 0%, #1a0a2e 100%); border: 1px solid #2a2a4a; border-radius: 16px; padding: 24px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(102,126,234,0.08) 0%, transparent 70%); }
   .hero-main h2 { color: #8888aa; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
@@ -37,7 +26,6 @@
   .hero-stat { text-align: right; }
   .hero-stat .label { font-size: 11px; color: #8888aa; text-transform: uppercase; letter-spacing: 1px; }
   .hero-stat .value { font-size: 22px; font-weight: 700; margin-top: 2px; }
-
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 16px; }
   .card { background: #0f0f25; border: 1px solid #1a1a35; border-radius: 12px; padding: 16px; transition: border-color 0.3s; }
   .card:hover { border-color: #2a2a5a; }
@@ -49,52 +37,56 @@
   .gold { color: #fbbf24; }
   .blue { color: #60a5fa; }
   .purple { color: #a78bfa; }
-  .pink { color: #f472b6; }
-
   .btn { background: #1a1a3a; border: 1px solid #2a2a5a; color: #e0e0e0; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; transition: all 0.2s; font-family: inherit; }
   .btn:hover { background: #2a2a5a; border-color: #667eea; }
-  .btn-primary { background: linear-gradient(135deg, #667eea, #764ba2); border: none; } .btn-primary:hover { opacity: 0.9; }
-
-  /* Positions */
   .pos-card { background: #0a0a1a; border: 1px solid #1a1a35; border-radius: 8px; padding: 12px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
   .pos-sym { font-size: 16px; font-weight: 700; }
   .pos-detail { font-size: 11px; color: #666; }
   .pos-pnl { font-size: 18px; font-weight: 700; text-align: right; }
-
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th { text-align: left; padding: 8px 6px; color: #555; border-bottom: 1px solid #1a1a2e; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
   td { padding: 8px 6px; border-bottom: 1px solid #0f0f20; }
-
   .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
   .badge-g { background: rgba(74,222,128,0.12); color: #4ade80; }
   .badge-r { background: rgba(248,113,113,0.12); color: #f87171; }
   .badge-y { background: rgba(251,191,36,0.12); color: #fbbf24; }
-
   .chart-box { height: 220px; margin-top: 8px; }
-
-  /* Footer */
   .footer { text-align: center; padding: 30px 0; color: #333; font-size: 12px; }
-  
-  /* Responsive */
-  @media (max-width: 768px) { .hero-main .big-number { font-size: 30px; } .hero-stat .value { font-size: 18px; } .grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } .header { flex-direction: column; align-items: flex-start; } }
-
-  /* Tabs */
   .tabs { display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap; }
   .tab { padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; background: transparent; color: #666; border: 1px solid transparent; transition: all 0.2s; font-family: inherit; }
   .tab:hover { color: #e0e0e0; border-color: #2a2a4a; }
   .tab.active { background: #1a1a3a; color: #a78bfa; border-color: #3a3a6a; }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
-
-  /* Notice */
   .notice { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); border-radius: 8px; padding: 12px; font-size: 12px; color: #fbbf24; margin-bottom: 12px; }
   .notice a { color: #60a5fa; }
+  @media (max-width: 768px) { .hero-main .big-number { font-size: 30px; } .hero-stat .value { font-size: 18px; } .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+  /* Login form */
+  #loginScreen { position: fixed; top:0;left:0;right:0;bottom:0; background:#07070f; display:flex; align-items:center; justify-content:center; z-index:999; }
+  #loginScreen .login-box { background:#0f0f25; border:1px solid #2a2a4a; border-radius:16px; padding:32px; width:340px; max-width:90vw; text-align:center; }
+  #loginScreen .login-box h2 { margin-bottom:8px; font-size:20px; color:#e0e0e0; }
+  #loginScreen .login-box p { color:#666; font-size:13px; margin-bottom:20px; }
+  #loginScreen input { width:100%; background:#1a1a3a; border:1px solid #2a2a5a; color:#e0e0e0; padding:12px; border-radius:8px; margin-bottom:12px; font-size:14px; outline:none; font-family:inherit; }
+  #loginScreen input:focus { border-color:#667eea; }
+  #loginScreen .btn { width:100%; padding:12px; font-size:14px; }
+  #loginScreen .error { color:#f87171; font-size:12px; margin-top:8px; }
 </style>
 </head>
 <body>
-<div class="container">
-  <!-- Header -->
+<!-- Login Screen -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h2>🦅 Raven Dashboard</h2>
+    <p>Ingresa tus credenciales</p>
+    <input type="text" id="loginUser" placeholder="Usuario" value="admin" onkeydown="if(event.key==='Enter') login()">
+    <input type="password" id="loginPass" placeholder="Contraseña" onkeydown="if(event.key==='Enter') login()">
+    <button class="btn btn-primary" onclick="login()">Ingresar</button>
+    <div class="error" id="loginError"></div>
+  </div>
+</div>
+
+<div class="container" id="mainContent" style="display:none;">
   <div class="header">
     <div class="logo">
       <h1>🦅 Raven Dashboard</h1>
@@ -106,7 +98,6 @@
     </div>
   </div>
 
-  <!-- Hero -->
   <div class="hero">
     <div class="hero-main">
       <h2>Capital Total Gestionado</h2>
@@ -121,7 +112,6 @@
     </div>
   </div>
 
-  <!-- Tabs -->
   <div class="tabs">
     <div class="tab active" onclick="switchTab('overview')" id="tab-overview">📊 Resumen</div>
     <div class="tab" onclick="switchTab('positions')" id="tab-positions">📈 Posiciones</div>
@@ -129,7 +119,6 @@
     <div class="tab" onclick="switchTab('watch')" id="tab-watch">👁 Observación</div>
   </div>
 
-  <!-- Tab: Overview -->
   <div class="tab-content active" id="content-overview">
     <div class="grid">
       <div class="card"><h3>Cuenta WILD</h3><div class="big blue" id="wildEquity">—</div><div class="sub" id="wildDetail">USDT disponible</div></div>
@@ -137,89 +126,45 @@
       <div class="card"><h3>Posiciones</h3><div class="big gold" id="positionsCount">0</div><div class="sub">abiertas actualmente</div></div>
       <div class="card"><h3>Último Trade</h3><div class="big" id="lastTradePnl">—</div><div class="sub" id="lastTradeInfo">sin actividad reciente</div></div>
     </div>
-    <div class="card">
-      <h3>📊 Evolución del Capital (7 días)</h3>
-      <div class="chart-box"><canvas id="capitalChart"></canvas></div>
-    </div>
+    <div class="card"><h3>📊 Evolución del Capital (7 días)</h3><div class="chart-box"><canvas id="capitalChart"></canvas></div></div>
   </div>
 
-  <!-- Tab: Positions -->
   <div class="tab-content" id="content-positions">
-    <div class="card">
-      <h3>Posiciones Abiertas en Bybit</h3>
-      <div id="positionsList"><p style="color:#666;text-align:center;padding:20px;">Sin posiciones abiertas ✅</p></div>
-    </div>
-    <div style="margin-top:12px;" class="card">
-      <h3>Últimas Operaciones</h3>
-      <div id="lastTrades"><p style="color:#666;">Cargando...</p></div>
-    </div>
+    <div class="card"><h3>Posiciones Abiertas</h3><div id="positionsList"><p style="color:#666;text-align:center;padding:20px;">Sin posiciones abiertas ✅</p></div></div>
+    <div style="margin-top:12px;" class="card"><h3>Últimas Operaciones</h3><div id="lastTrades"><p style="color:#666;">Cargando...</p></div></div>
   </div>
 
-  <!-- Tab: History -->
   <div class="tab-content" id="content-history">
-    <div class="card">
-      <h3>Historial de Capital</h3>
-      <div class="chart-box" style="height:300px;"><canvas id="historyChart"></canvas></div>
-    </div>
+    <div class="card"><h3>Historial de Capital</h3><div class="chart-box" style="height:300px;"><canvas id="historyChart"></canvas></div></div>
   </div>
 
-  <!-- Tab: Watch -->
   <div class="tab-content" id="content-watch">
-    <div class="notice">🚀 Monedas monitoreadas automáticamente por el scanner de Raven</div>
-    <div class="card">
-      <h3>Monedas en Observación</h3>
-      <div id="watchCoins"><p style="color:#666;">No hay monedas en seguimiento</p></div>
-    </div>
+    <div class="notice">🚀 Datos actualizados 2 veces al día desde Bybit</div>
+    <div class="card"><h3>Monedas en Observación</h3><div id="watchCoins"><p style="color:#666;">No hay monedas en seguimiento</p></div></div>
   </div>
 
-  <div class="footer">
-    🦅 Raven — Trading Automation · Bybit USDT · Powered by AI
-  </div>
+  <div class="footer">🦅 Raven — Trading Automation · Bybit USDT · Powered by AI</div>
 </div>
 
 <script>
-// ===== CONFIG =====
-// En local: intenta leer data.json. En GitHub Pages: usa datos de ejemplo.
-const DATA_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') 
-  ? '/data.json?_=' + Date.now()
-  : null;
+const USER = 'admin';
+const PASS = '2005';
 
-// Datos de ejemplo para GitHub Pages (muestra el diseño)
-const DEMO_DATA = {
-  totalCapital: 118.18,
-  wildCapital: 62.46,
-  joakoCapital: 55.72,
-  wildEquity: 62.37,
-  joakoEquity: 55.72,
-  pnlCycle: 13.18,
-  pnlPercent: 12.55,
-  openPositions: 0,
-  timestamp: new Date().toISOString(),
-  btc: { price: 84320, change: 1.28 },
-  positions: [],
-  lastTrades: [
-    { symbol: 'BIOUSDT', side: 'Sell', price: 0.03213, pnl: 1.95 },
-    { symbol: 'BBUSDT', side: 'Sell', price: 0.02758, pnl: -1.50 },
-    { symbol: 'TACUSDT', side: 'Sell', price: 0.00914, pnl: -3.36 }
-  ],
-  watchCoins: [
-    { symbol: 'ZBTUSDT', price: 0.1956, change: -0.85, signal: 'NEUTRAL' },
-    { symbol: 'OPGUSDT', price: 0.2867, change: 4.25, signal: 'OBSERVANDO' },
-    { symbol: 'TACUSDT', price: 0.01305, change: -2.1, signal: 'NEUTRAL' }
-  ],
-  capitalHistory: [
-    { date: '22/04', capital: 108.69 },
-    { date: '23/04', capital: 111.60 },
-    { date: '24/04', capital: 108.69 },
-    { date: '25/04', capital: 112.00 },
-    { date: '26/04', capital: 115.50 },
-    { date: '27/04', capital: 117.80 },
-    { date: '28/04', capital: 118.18 }
-  ]
-};
+function login() {
+  const u = document.getElementById('loginUser').value;
+  const p = document.getElementById('loginPass').value;
+  if (u === USER && p === PASS) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    document.getElementById('loginError').textContent = '';
+    refresh();
+  } else {
+    document.getElementById('loginError').textContent = '❌ Usuario o contraseña incorrectos';
+  }
+}
 
-let capitalChart = null;
-let historyChart = null;
+const DATA_URL = 'data.json?_=' + Date.now();
+let capitalChart = null, historyChart = null;
 
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -229,40 +174,27 @@ function switchTab(name) {
 }
 
 function updateUI(d) {
-  document.getElementById('totalCapital').textContent = '$' + d.totalCapital.toFixed(2);
-  document.getElementById('wildCap').textContent = '$' + d.wildCapital.toFixed(2);
-  document.getElementById('joakoCap').textContent = '$' + d.joakoCapital.toFixed(2);
-  
-  const pnl = d.pnlCycle;
+  document.getElementById('totalCapital').textContent = '$' + (d.totalCapital || 0).toFixed(2);
+  document.getElementById('wildCap').textContent = '$' + (d.wildCapital || 0).toFixed(2);
+  document.getElementById('joakoCap').textContent = '$' + (d.joakoCapital || 0).toFixed(2);
+  const pnl = d.pnlCycle || 0;
   const pnlEl = document.getElementById('pnlCycle');
   pnlEl.textContent = (pnl >= 0 ? '+' : '') + '$' + pnl.toFixed(2);
   pnlEl.className = 'value ' + (pnl >= 0 ? 'green' : 'red');
-  
-  document.getElementById('wildEquity').textContent = '$' + (d.wildEquity || d.wildCapital).toFixed(2);
-  document.getElementById('joakoEquity').textContent = '$' + (d.joakoEquity || d.joakoCapital).toFixed(2);
+  document.getElementById('wildEquity').textContent = '$' + ((d.wildEquity || d.wildCapital) || 0).toFixed(2);
+  document.getElementById('joakoEquity').textContent = '$' + ((d.joakoEquity || d.joakoCapital) || 0).toFixed(2);
   document.getElementById('positionsCount').textContent = d.openPositions || 0;
-
-  // BTC
-  const btc = d.btc || {};
-  document.getElementById('btcPrice').textContent = btc.price ? '$' + (typeof btc.price === 'number' ? btc.price.toLocaleString() : btc.price) : '$—';
-  
-  // Last update
+  if (d.btc && d.btc.price) {
+    document.getElementById('btcPrice').textContent = '$' + (typeof d.btc.price === 'number' ? d.btc.price.toLocaleString() : d.btc.price);
+  }
   document.getElementById('lastUpdate').textContent = d.timestamp ? new Date(d.timestamp).toLocaleString('es-MX', {hour12:false}) : '—';
-  
-  // Last trade
+  if (d.pnlPercent) { document.getElementById('capitalLabel').textContent = 'USDT · +' + d.pnlPercent.toFixed(1) + '% this cycle'; }
   if (d.lastTrades && d.lastTrades.length > 0) {
     const lt = d.lastTrades[0];
     document.getElementById('lastTradePnl').textContent = (lt.pnl >= 0 ? '+' : '') + '$' + lt.pnl.toFixed(2);
     document.getElementById('lastTradePnl').className = 'big ' + (lt.pnl >= 0 ? 'green' : 'red');
     document.getElementById('lastTradeInfo').textContent = lt.symbol + ' · ' + lt.side;
   }
-
-  // Capital Label
-  if (d.pnlPercent) {
-    document.getElementById('capitalLabel').textContent = 'USDT · +' + d.pnlPercent.toFixed(1) + '% this cycle';
-  }
-  
-  // Positions
   updatePositions(d);
   updateLastTrades(d);
   updateWatchCoins(d);
@@ -271,23 +203,16 @@ function updateUI(d) {
 
 function updatePositions(d) {
   const div = document.getElementById('positionsList');
-  if (!d.positions || d.positions.length === 0) {
-    div.innerHTML = '<p style="color:#666;text-align:center;padding:20px;">✅ Sin posiciones abiertas</p>';
-    return;
-  }
+  if (!d.positions || d.positions.length === 0) { div.innerHTML = '<p style="color:#666;text-align:center;padding:20px;">✅ Sin posiciones abiertas</p>'; return; }
   div.innerHTML = d.positions.map(p => {
     const cls = p.unrealisedPnl >= 0 ? 'green' : 'red';
-    const str = (p.unrealisedPnl >= 0 ? '+' : '') + '$' + p.unrealisedPnl.toFixed(2);
-    return '<div class="pos-card"><div><div class="pos-sym">' + p.symbol + '</div><div class="pos-detail">Size: ' + p.size + ' | Entry: $' + parseFloat(p.entryPrice).toFixed(6) + '</div></div><div class="pos-pnl ' + cls + '">' + str + '</div></div>';
+    return '<div class="pos-card"><div><div class="pos-sym">' + p.symbol + '</div><div class="pos-detail">Size: ' + p.size + ' | Entry: $' + parseFloat(p.entryPrice).toFixed(6) + '</div></div><div class="pos-pnl ' + cls + '">' + (p.unrealisedPnl >= 0 ? '+' : '') + '$' + p.unrealisedPnl.toFixed(2) + '</div></div>';
   }).join('');
 }
 
 function updateLastTrades(d) {
   const div = document.getElementById('lastTrades');
-  if (!d.lastTrades || d.lastTrades.length === 0) {
-    div.innerHTML = '<p style="color:#666;text-align:center;padding:20px;">Sin operaciones recientes</p>';
-    return;
-  }
+  if (!d.lastTrades || d.lastTrades.length === 0) { div.innerHTML = '<p style="color:#666;text-align:center;padding:20px;">Sin operaciones recientes</p>'; return; }
   div.innerHTML = '<table><tr><th>Moneda</th><th>Side</th><th>Precio</th><th>PnL</th></tr>' + d.lastTrades.map(t => {
     return '<tr><td><strong>' + t.symbol + '</strong></td><td><span class="badge ' + (t.side === 'Buy' ? 'badge-g' : 'badge-r') + '">' + t.side + '</span></td><td>$' + t.price.toFixed(6) + '</td><td class="' + (t.pnl >= 0 ? 'green' : 'red') + '">' + (t.pnl >= 0 ? '+' : '') + '$' + t.pnl.toFixed(2) + '</td></tr>';
   }).join('') + '</table>';
@@ -295,10 +220,7 @@ function updateLastTrades(d) {
 
 function updateWatchCoins(d) {
   const div = document.getElementById('watchCoins');
-  if (!d.watchCoins || d.watchCoins.length === 0) {
-    div.innerHTML = '<p style="color:#666;">No hay monedas en seguimiento</p>';
-    return;
-  }
+  if (!d.watchCoins || d.watchCoins.length === 0) { div.innerHTML = '<p style="color:#666;">No hay monedas en seguimiento</p>'; return; }
   div.innerHTML = '<table><tr><th>Moneda</th><th>Precio</th><th>24h</th><th>Señal</th></tr>' + d.watchCoins.map(c => {
     const cls = c.change >= 0 ? 'badge-g' : 'badge-r';
     return '<tr><td><strong>' + c.symbol + '</strong></td><td>$' + (typeof c.price === 'number' ? c.price.toFixed(6) : c.price) + '</td><td><span class="badge ' + cls + '">' + (c.change >= 0 ? '+' : '') + c.change.toFixed(2) + '%</span></td><td>' + (c.signal || '—') + '</td></tr>';
@@ -307,64 +229,34 @@ function updateWatchCoins(d) {
 
 function updateCharts(d) {
   if (!d.capitalHistory || d.capitalHistory.length < 2) return;
-  
   const labels = d.capitalHistory.map(h => h.date);
   const data = d.capitalHistory.map(h => h.capital);
   const color = data[data.length-1] >= data[0] ? '#4ade80' : '#f87171';
-  
   [document.getElementById('capitalChart'), document.getElementById('historyChart')].forEach((canvas, idx) => {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (idx === 0 && capitalChart) capitalChart.destroy();
     if (idx === 1 && historyChart) historyChart.destroy();
-    
     const chart = new Chart(ctx, {
       type: 'line',
-      data: {
-        labels,
-        datasets: [{
-          label: 'Capital (USDT)',
-          data,
-          borderColor: color,
-          backgroundColor: color.replace(')', ',0.1)').replace('rgb', 'rgba'),
-          fill: true,
-          tension: 0.3,
-          pointRadius: 4,
-          pointBackgroundColor: color
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: {
-          x: { ticks: { color: '#555' }, grid: { color: '#0f0f20' } },
-          y: { ticks: { color: '#555' }, grid: { color: '#0f0f20' } }
-        }
-      }
+      data: { labels, datasets: [{ label: 'Capital (USDT)', data, borderColor: color, backgroundColor: color.replace(')', ',0.1)').replace('rgb','rgba'), fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: color }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#555' }, grid: { color: '#0f0f20' } }, y: { ticks: { color: '#555' }, grid: { color: '#0f0f20' } } } }
     });
-    if (idx === 0) capitalChart = chart;
-    else historyChart = chart;
+    if (idx === 0) capitalChart = chart; else historyChart = chart;
   });
 }
 
 async function refresh() {
-  if (DATA_URL) {
-    try {
-      const r = await fetch(DATA_URL);
-      const d = await r.json();
-      updateUI(d);
-      return;
-    } catch(e) {
-      console.log('Local data not available, using demo data');
-    }
+  try {
+    const r = await fetch(DATA_URL);
+    const d = await r.json();
+    updateUI(d);
+  } catch(e) {
+    document.getElementById('lastUpdate').textContent = '❌ Error de conexión';
   }
-  // Fallback a demo data
-  updateUI(DEMO_DATA);
 }
 
-// Init
-refresh();
-setInterval(refresh, 60000);
+setInterval(refresh, 120000);
 </script>
 </body>
 </html>
