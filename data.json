@@ -1,15 +1,15 @@
 {
-  "totalCapital": 62.37,
+  "totalCapital": 119.27,
   "wildCapital": 62.37,
-  "joakoCapital": 0,
+  "joakoCapital": 56.9,
   "wildEquity": 62.37,
-  "joakoEquity": 0,
+  "joakoEquity": 56.9,
   "pnlCycle": -0.0,
-  "pnlPercent": -0.01,
+  "pnlPercent": -0.0,
   "openPositions": 0,
-  "timestamp": "2026-04-28T13:32:46.126840",
+  "timestamp": "2026-04-28T13:51:36.794357",
   "btc": {
-    "price": 76153.7,
+    "price": 76326.7,
     "change": 0.0
   },
   "positions": [],
@@ -23,55 +23,55 @@
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.1525,
+      "price": 0.15336,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006257,
+      "price": 0.006278,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03197,
+      "price": 0.03216,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.06254,
+      "price": 0.06245,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.08828,
+      "price": 0.08869,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003887,
+      "price": 0.003906,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000RATSUSDT",
-      "price": 0.03973,
+      "price": 0.04039,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TURBOUSDT",
-      "price": 1.157,
+      "price": 1.1619,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "AAVEUSDT",
-      "price": 96.65,
+      "price": 96.7,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -79,7 +79,7 @@
   "capitalHistory": [
     {
       "date": "28/04",
-      "capital": 62.37
+      "capital": 119.27
     }
   ]
 }
