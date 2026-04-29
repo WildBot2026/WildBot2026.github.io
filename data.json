@@ -1,85 +1,92 @@
 {
-  "totalCapital": 119.27,
-  "wildCapital": 62.37,
-  "joakoCapital": 56.9,
-  "wildEquity": 62.37,
-  "joakoEquity": 56.9,
-  "pnlCycle": -0.0,
-  "pnlPercent": -0.0,
-  "openPositions": 0,
-  "timestamp": "2026-04-28T13:51:36.794357",
+  "totalCapital": 116.51,
+  "wildCapital": 59.75,
+  "joakoCapital": 56.76,
+  "wildEquity": 59.75,
+  "joakoEquity": 56.76,
+  "wildUSDT": 7.62,
+  "joakoUSDT": 9.77,
+  "wildPositionsValue": 52.17,
+  "joakoPositionsValue": 46.98,
+  "pnlCycle": -2.76,
+  "pnlPercent": -2.31,
+  "openPositions": 6,
+  "timestamp": "2026-04-29T12:24:26",
   "btc": {
-    "price": 76326.7,
-    "change": 0.0
+    "price": 75345.5,
+    "change": 0
   },
-  "positions": [],
-  "lastTrades": [],
-  "watchCoins": [
+  "positions": [
     {
-      "symbol": "0GUSDT",
-      "price": 0.5515,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "WILD",
+      "symbol": "BLEND",
+      "qty": 163.16,
+      "entry": 0.153,
+      "price": 0.15392,
+      "value": 25.11,
+      "pnl": 0.15,
+      "pnlPercent": 0.6
     },
     {
-      "symbol": "1000000MOGUSDT",
-      "price": 0.15336,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "WILD",
+      "symbol": "TAC",
+      "qty": 896.1,
+      "entry": 0.0167,
+      "price": 0.01696,
+      "value": 15.2,
+      "pnl": 0.23,
+      "pnlPercent": 1.55
     },
     {
-      "symbol": "1000BONKUSDT",
-      "price": 0.006278,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "WILD",
+      "symbol": "LUNC",
+      "qty": 176990.83,
+      "entry": 6.8e-05,
+      "price": 6.7e-05,
+      "value": 11.86,
+      "pnl": -0.18,
+      "pnlPercent": -1.46
     },
     {
-      "symbol": "1000FLOKIUSDT",
-      "price": 0.03216,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "JOAKO",
+      "symbol": "BLEND",
+      "qty": 179.16,
+      "entry": 0.15545,
+      "price": 0.15392,
+      "value": 27.58,
+      "pnl": -0.27,
+      "pnlPercent": -0.98
     },
     {
-      "symbol": "1000LUNCUSDT",
-      "price": 0.06245,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "JOAKO",
+      "symbol": "TAC",
+      "qty": 853.15,
+      "entry": 0.01661,
+      "price": 0.01693,
+      "value": 14.44,
+      "pnl": 0.27,
+      "pnlPercent": 1.93
     },
     {
-      "symbol": "1000NEIROCTOUSDT",
-      "price": 0.08869,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000PEPEUSDT",
-      "price": 0.003906,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000RATSUSDT",
-      "price": 0.04039,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000TURBOUSDT",
-      "price": 1.1619,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "AAVEUSDT",
-      "price": 96.7,
-      "change": 0.0,
-      "signal": "\u2014"
+      "account": "JOAKO",
+      "symbol": "LUNC",
+      "qty": 74049.88,
+      "entry": 6.77e-05,
+      "price": 6.7e-05,
+      "value": 4.96,
+      "pnl": -0.05,
+      "pnlPercent": -1.02
     }
   ],
+  "lastTrades": [],
   "capitalHistory": [
     {
       "date": "28/04",
       "capital": 119.27
+    },
+    {
+      "date": "29/04",
+      "capital": 116.51
     }
   ]
 }
