@@ -1,15 +1,15 @@
 {
-  "totalCapital": 61.53,
-  "wildCapital": 61.53,
+  "totalCapital": 58.93,
+  "wildCapital": 58.93,
   "joakoCapital": 0,
-  "wildEquity": 61.53,
+  "wildEquity": 58.93,
   "joakoEquity": 0,
-  "pnlCycle": -57.74,
-  "pnlPercent": -48.41,
+  "pnlCycle": -60.34,
+  "pnlPercent": -50.59,
   "openPositions": 0,
-  "timestamp": "2026-04-29T19:01:08.943670",
+  "timestamp": "2026-04-30T08:01:26.123590",
   "btc": {
-    "price": 76281.3,
+    "price": 76463.3,
     "change": 0.0
   },
   "positions": [],
@@ -17,61 +17,61 @@
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.5518,
+      "price": 0.5462,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000BABYDOGEUSDT",
-      "price": 0.0004192,
+      "price": 0.0004143,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.15053,
+      "price": 0.14823,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006277,
+      "price": 0.006221,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03272,
+      "price": 0.03212,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.06962,
+      "price": 0.07579,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.08957,
+      "price": 0.08752,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003936,
+      "price": 0.003872,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000RATSUSDT",
-      "price": 0.03755,
+      "price": 0.03833,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
-      "symbol": "1000TOSHIUSDT",
-      "price": 0.18973,
+      "symbol": "1000TAGUSDT",
+      "price": 0.6247,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -84,6 +84,10 @@
     {
       "date": "29/04",
       "capital": 61.53
+    },
+    {
+      "date": "30/04",
+      "capital": 58.93
     }
   ]
 }
