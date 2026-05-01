@@ -1,15 +1,15 @@
 {
-  "totalCapital": 59.98,
-  "wildCapital": 59.98,
+  "totalCapital": 59.11,
+  "wildCapital": 59.11,
   "joakoCapital": 0,
-  "wildEquity": 59.98,
+  "wildEquity": 59.11,
   "joakoEquity": 0,
-  "pnlCycle": -59.29,
-  "pnlPercent": -49.71,
+  "pnlCycle": -60.16,
+  "pnlPercent": -50.44,
   "openPositions": 0,
-  "timestamp": "2026-04-30T19:00:30.881677",
+  "timestamp": "2026-05-01T08:01:02.531808",
   "btc": {
-    "price": 76450.5,
+    "price": 78717.9,
     "change": 0.0
   },
   "positions": [],
@@ -17,43 +17,43 @@
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.5227,
+      "price": 0.5326,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.14773,
+      "price": 0.15144,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006164,
+      "price": 0.006337,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03217,
+      "price": 0.033,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.07496,
+      "price": 0.07144,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.08842,
+      "price": 0.09153,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003884,
+      "price": 0.003982,
       "change": 0.0,
       "signal": "\u2014"
     },
@@ -65,13 +65,13 @@
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 0.674,
+      "price": 0.7717,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "AAVEUSDT",
-      "price": 92.73,
+      "price": 93.78,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -88,6 +88,10 @@
     {
       "date": "30/04",
       "capital": 59.98
+    },
+    {
+      "date": "01/05",
+      "capital": 59.11
     }
   ]
 }
