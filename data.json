@@ -1,77 +1,77 @@
 {
-  "totalCapital": 59.31,
-  "wildCapital": 59.31,
+  "totalCapital": 59.13,
+  "wildCapital": 59.13,
   "joakoCapital": 0,
-  "wildEquity": 59.31,
+  "wildEquity": 59.13,
   "joakoEquity": 0,
-  "pnlCycle": -59.96,
-  "pnlPercent": -50.27,
+  "pnlCycle": -60.14,
+  "pnlPercent": -50.42,
   "openPositions": 0,
-  "timestamp": "2026-05-01T19:00:31.641550",
+  "timestamp": "2026-05-02T08:01:29.471788",
   "btc": {
-    "price": 78312.0,
+    "price": 78357.5,
     "change": 0.0
   },
   "positions": [],
   "lastTrades": [],
   "watchCoins": [
     {
-      "symbol": "0GUSDT",
-      "price": 0.5302,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
       "symbol": "1000000MOGUSDT",
-      "price": 0.15089,
+      "price": 0.15118,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006224,
+      "price": 0.006245,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03233,
+      "price": 0.03222,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.06966,
+      "price": 0.07874,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.0903,
+      "price": 0.09431,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003932,
+      "price": 0.003933,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000RATSUSDT",
-      "price": 0.03868,
+      "price": 0.04081,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 0.8342,
+      "price": 1.2676,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
-      "symbol": "1000TURBOUSDT",
-      "price": 1.1399,
+      "symbol": "AAVEUSDT",
+      "price": 92.31,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "ACHUSDT",
+      "price": 0.007491,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -92,6 +92,10 @@
     {
       "date": "01/05",
       "capital": 59.31
+    },
+    {
+      "date": "02/05",
+      "capital": 59.13
     }
   ]
 }
