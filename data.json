@@ -1,77 +1,77 @@
 {
-  "totalCapital": 56.98,
-  "wildCapital": 56.98,
+  "totalCapital": 58.89,
+  "wildCapital": 58.89,
   "joakoCapital": 0,
-  "wildEquity": 56.98,
+  "wildEquity": 58.89,
   "joakoEquity": 0,
-  "pnlCycle": -62.29,
-  "pnlPercent": -52.23,
+  "pnlCycle": -60.38,
+  "pnlPercent": -50.62,
   "openPositions": 0,
-  "timestamp": "2026-05-05T08:01:06.577953",
+  "timestamp": "2026-05-05T19:00:31.965369",
   "btc": {
-    "price": 81284.2,
+    "price": 81053.3,
     "change": 0.0
   },
   "positions": [],
   "lastTrades": [],
   "watchCoins": [
     {
+      "symbol": "1000000BABYDOGEUSDT",
+      "price": 0.0004405,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
       "symbol": "1000000MOGUSDT",
-      "price": 0.15997,
+      "price": 0.15137,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006492,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000CATUSDT",
-      "price": 0.0020773,
+      "price": 0.0065,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03315,
+      "price": 0.03295,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.10271,
+      "price": 0.11477,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.10137,
+      "price": 0.09786,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.004113,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000RATSUSDT",
-      "price": 0.0387,
+      "price": 0.004128,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 1.2997,
+      "price": 1.3295,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TURBOUSDT",
-      "price": 1.2942,
+      "price": 1.2876,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "price": 0.0972,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -107,7 +107,7 @@
     },
     {
       "date": "05/05",
-      "capital": 56.98
+      "capital": 58.89
     }
   ]
 }
