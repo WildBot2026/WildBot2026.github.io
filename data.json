@@ -1,15 +1,15 @@
 {
-  "totalCapital": 73.18,
-  "wildCapital": 73.18,
+  "totalCapital": 73.16,
+  "wildCapital": 73.16,
   "joakoCapital": 0,
-  "wildEquity": 73.18,
+  "wildEquity": 73.16,
   "joakoEquity": 0,
-  "pnlCycle": -46.09,
-  "pnlPercent": -38.64,
+  "pnlCycle": -46.11,
+  "pnlPercent": -38.66,
   "openPositions": 0,
-  "timestamp": "2026-05-10T08:00:56.765890",
+  "timestamp": "2026-05-10T19:26:10.945557",
   "btc": {
-    "price": 80954.8,
+    "price": 81690.0,
     "change": 0.0
   },
   "positions": [],
@@ -17,61 +17,61 @@
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.5736,
+      "price": 0.5683,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.16998,
+      "price": 0.16964,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.007333,
+      "price": 0.007596,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BTTUSDT",
-      "price": 0.0003416,
+      "price": 0.0003432,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03673,
+      "price": 0.03713,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.10094,
+      "price": 0.09915,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.10034,
+      "price": 0.10188,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.004272,
+      "price": 0.004367,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000RATSUSDT",
-      "price": 0.03892,
+      "price": 0.03888,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 1.3911,
+      "price": 1.3388,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -123,7 +123,7 @@
     },
     {
       "date": "10/05",
-      "capital": 73.18
+      "capital": 73.16
     }
   ]
 }
