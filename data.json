@@ -1,87 +1,77 @@
 {
-  "totalCapital": 33.96,
-  "wildCapital": 33.96,
+  "totalCapital": 33.59,
+  "wildCapital": 33.59,
   "joakoCapital": 0,
-  "wildEquity": 33.96,
+  "wildEquity": 33.59,
   "joakoEquity": 0,
-  "pnlCycle": -85.31,
-  "pnlPercent": -71.53,
-  "openPositions": 1,
-  "timestamp": "2026-05-20T19:00:22.501726",
+  "pnlCycle": -85.68,
+  "pnlPercent": -71.83,
+  "openPositions": 0,
+  "timestamp": "2026-05-21T08:00:57.656409",
   "btc": {
-    "price": 77974.0,
+    "price": 77137.1,
     "change": 0.0
   },
-  "positions": [
-    {
-      "symbol": "B3USDT",
-      "size": 5200.0,
-      "entryPrice": 0.0009737,
-      "unrealisedPnl": -0.01092,
-      "leverage": "10",
-      "liquidationPrice": 0.0,
-      "side": "Buy"
-    }
-  ],
+  "positions": [],
   "lastTrades": [],
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.4959,
+      "price": 0.4921,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000000CHEEMSUSDT",
+      "price": 0.7147,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.14583,
+      "price": 0.14292,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "10000NEXUSDT",
+      "price": 0.05674,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.00613,
+      "price": 0.006108,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03031,
+      "price": 0.03022,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.07755,
+      "price": 0.07651,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.09924,
+      "price": 0.09851,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003744,
+      "price": 0.003745,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
-      "symbol": "1000TURBOUSDT",
-      "price": 1.1347,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "2ZUSDT",
-      "price": 0.10615,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "AAVEUSDT",
-      "price": 88.89,
+      "symbol": "1000TAGUSDT",
+      "price": 1.26,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -174,6 +164,10 @@
     {
       "date": "20/05",
       "capital": 33.96
+    },
+    {
+      "date": "21/05",
+      "capital": 33.59
     }
   ]
 }
