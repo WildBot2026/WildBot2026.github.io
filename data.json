@@ -5,11 +5,11 @@
   "wildEquity": 33.59,
   "joakoEquity": 0,
   "pnlCycle": -85.68,
-  "pnlPercent": -71.83,
+  "pnlPercent": -71.84,
   "openPositions": 0,
-  "timestamp": "2026-05-21T08:00:57.656409",
+  "timestamp": "2026-05-21T19:00:26.296529",
   "btc": {
-    "price": 77137.1,
+    "price": 77347.5,
     "change": 0.0
   },
   "positions": [],
@@ -17,61 +17,61 @@
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.4921,
+      "price": 0.4925,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000CHEEMSUSDT",
-      "price": 0.7147,
+      "price": 0.7474,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.14292,
+      "price": 0.14461,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "10000NEXUSDT",
-      "price": 0.05674,
+      "price": 0.05973,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006108,
+      "price": 0.006175,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03022,
+      "price": 0.03052,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.07651,
+      "price": 0.07887,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.09851,
+      "price": 0.10166,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003745,
+      "price": 0.003767,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 1.26,
+      "price": 1.174,
       "change": 0.0,
       "signal": "\u2014"
     }
