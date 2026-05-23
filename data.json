@@ -1,15 +1,15 @@
 {
-  "totalCapital": 33.57,
-  "wildCapital": 33.57,
+  "totalCapital": 33.21,
+  "wildCapital": 33.21,
   "joakoCapital": 0,
-  "wildEquity": 33.57,
+  "wildEquity": 33.21,
   "joakoEquity": 0,
-  "pnlCycle": -85.7,
-  "pnlPercent": -71.85,
+  "pnlCycle": -86.06,
+  "pnlPercent": -72.16,
   "openPositions": 0,
-  "timestamp": "2026-05-22T08:01:53.948396",
+  "timestamp": "2026-05-22T19:00:22.261354",
   "btc": {
-    "price": 77172.4,
+    "price": 75398.8,
     "change": 0.0
   },
   "positions": [],
@@ -17,61 +17,61 @@
   "watchCoins": [
     {
       "symbol": "0GUSDT",
-      "price": 0.4897,
+      "price": 0.4747,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000000MOGUSDT",
-      "price": 0.14661,
+      "price": 0.13678,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "10000NEXUSDT",
-      "price": 0.04478,
+      "price": 0.04585,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000BONKUSDT",
-      "price": 0.006278,
+      "price": 0.005945,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000FLOKIUSDT",
-      "price": 0.03079,
+      "price": 0.0289,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000LUNCUSDT",
-      "price": 0.08209,
+      "price": 0.08104,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000NEIROCTOUSDT",
-      "price": 0.09988,
+      "price": 0.09343,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000PEPEUSDT",
-      "price": 0.003796,
+      "price": 0.00361,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000RATSUSDT",
-      "price": 0.03538,
+      "price": 0.03635,
       "change": 0.0,
       "signal": "\u2014"
     },
     {
       "symbol": "1000TAGUSDT",
-      "price": 1.3515,
+      "price": 1.5729,
       "change": 0.0,
       "signal": "\u2014"
     }
@@ -171,7 +171,7 @@
     },
     {
       "date": "22/05",
-      "capital": 33.57
+      "capital": 33.21
     }
   ]
 }
