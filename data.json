@@ -1,96 +1,21 @@
 {
-  "totalCapital": 35.82,
-  "wildCapital": 35.82,
-  "joakoCapital": 0,
-  "wildEquity": 35.82,
-  "joakoEquity": 0,
-  "pnlCycle": -23.22,
-  "pnlPercent": -39.32,
-  "openPositions": 1,
-  "timestamp": "2026-06-02T08:25:21.173161",
+  "totalCapital": 0.0,
+  "wildCapital": 0.0,
+  "joakoCapital": 0.0,
+  "wildEquity": 0.0,
+  "joakoEquity": 0.0,
+  "pnlCycle": -55.98,
+  "pnlPercent": -100.0,
+  "openPositions": 0,
+  "timestamp": "2026-08-03T15:25:57.142188",
   "btc": {
-    "price": 68045.8,
-    "change": 0.0
+    "price": 0,
+    "change": 0
   },
-  "positions": [
-    {
-      "symbol": "BILLUSDT",
-      "size": 60.0,
-      "entryPrice": 0.08482,
-      "unrealisedPnl": 0.1656,
-      "leverage": "10",
-      "liquidationPrice": 0.0,
-      "side": "Buy"
-    }
-  ],
+  "positions": [],
   "lastTrades": [],
-  "watchCoins": [
-    {
-      "symbol": "0GUSDT",
-      "price": 0.403,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000000MOGUSDT",
-      "price": 0.1242,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "10000NEXUSDT",
-      "price": 0.03422,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000BONKUSDT",
-      "price": 0.005302,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000FLOKIUSDT",
-      "price": 0.02733,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000LUNCUSDT",
-      "price": 0.07742,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000NEIROCTOUSDT",
-      "price": 0.07656,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000PEPEUSDT",
-      "price": 0.003267,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1INCHUSDT",
-      "price": 0.08217,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "2ZUSDT",
-      "price": 0.08164,
-      "change": 0.0,
-      "signal": "\u2014"
-    }
-  ],
+  "watchCoins": [],
   "capitalHistory": [
-    {
-      "date": "03/05",
-      "capital": 59.04
-    },
     {
       "date": "04/05",
       "capital": 55.98
@@ -206,6 +131,10 @@
     {
       "date": "02/06",
       "capital": 35.82
+    },
+    {
+      "date": "03/08",
+      "capital": 0.0
     }
   ]
 }
