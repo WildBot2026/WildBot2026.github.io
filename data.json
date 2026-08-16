@@ -7,7 +7,7 @@
   "pnlCycle": -55.98,
   "pnlPercent": -100.0,
   "openPositions": 0,
-  "timestamp": "2026-08-15T14:30:19.233839",
+  "timestamp": "2026-08-16T02:23:02.612045",
   "btc": {
     "price": 0,
     "change": 0
@@ -133,7 +133,7 @@
       "capital": 35.82
     },
     {
-      "date": "15/08",
+      "date": "16/08",
       "capital": 0.0
     }
   ]
