@@ -6,86 +6,15 @@
   "joakoEquity": 0.0,
   "pnlCycle": -55.98,
   "pnlPercent": -100.0,
-  "openPositions": 1,
-  "timestamp": "2026-08-19T14:41:00.179736",
+  "openPositions": 0,
+  "timestamp": "2026-08-20T02:19:23.892361",
   "btc": {
-    "price": 65482.4,
-    "change": 0.0
+    "price": 0,
+    "change": 0
   },
-  "positions": [
-    {
-      "symbol": "BILLUSDT",
-      "size": 60.0,
-      "entryPrice": 0.08482,
-      "unrealisedPnl": -3.9372,
-      "leverage": "10",
-      "liquidationPrice": 0.0,
-      "side": "Buy"
-    }
-  ],
+  "positions": [],
   "lastTrades": [],
-  "watchCoins": [
-    {
-      "symbol": "0GUSDT",
-      "price": 0.1424,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000BONKUSDT",
-      "price": 0.002322,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000FLOKIUSDT",
-      "price": 0.02057,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000PEPEUSDT",
-      "price": 0.002615,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "1000RATSUSDT",
-      "price": 0.0408,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "2ZUSDT",
-      "price": 0.04802,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "AAOIUSDT",
-      "price": 129.13,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "AAPLUSDT",
-      "price": 316.59,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "AAVEUSDT",
-      "price": 89.93,
-      "change": 0.0,
-      "signal": "\u2014"
-    },
-    {
-      "symbol": "ACEUSDT",
-      "price": 0.20102,
-      "change": 0.0,
-      "signal": "\u2014"
-    }
-  ],
+  "watchCoins": [],
   "capitalHistory": [
     {
       "date": "04/05",
@@ -204,7 +133,7 @@
       "capital": 35.82
     },
     {
-      "date": "19/08",
+      "date": "20/08",
       "capital": 0.0
     }
   ]
