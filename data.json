@@ -7,14 +7,75 @@
   "pnlCycle": -55.98,
   "pnlPercent": -100.0,
   "openPositions": 0,
-  "timestamp": "2026-10-02T06:54:27.036182",
+  "timestamp": "2026-10-02T19:08:13.179740",
   "btc": {
-    "price": 0,
-    "change": 0
+    "price": 84174.7,
+    "change": 0.0
   },
   "positions": [],
   "lastTrades": [],
-  "watchCoins": [],
+  "watchCoins": [
+    {
+      "symbol": "0GUSDT",
+      "price": 0.2912,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000000MOGUSDT",
+      "price": 0.1122,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000BONKUSDT",
+      "price": 0.00356,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000BTTUSDT",
+      "price": 0.0003716,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000FLOKIUSDT",
+      "price": 0.02666,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000NEIROCTOUSDT",
+      "price": 0.08762,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000PEPEUSDT",
+      "price": 0.004168,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000TURBOUSDT",
+      "price": 1.0132,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "price": 0.09961,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "2ZUSDT",
+      "price": 0.04602,
+      "change": 0.0,
+      "signal": "\u2014"
+    }
+  ],
   "capitalHistory": [
     {
       "date": "04/05",
