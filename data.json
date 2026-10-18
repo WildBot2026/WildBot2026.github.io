@@ -7,14 +7,75 @@
   "pnlCycle": -55.98,
   "pnlPercent": -100.0,
   "openPositions": 0,
-  "timestamp": "2026-10-18T05:40:33.024089",
+  "timestamp": "2026-10-18T17:13:18.217299",
   "btc": {
-    "price": 0,
-    "change": 0
+    "price": 81178.0,
+    "change": 0.0
   },
   "positions": [],
   "lastTrades": [],
-  "watchCoins": [],
+  "watchCoins": [
+    {
+      "symbol": "0GUSDT",
+      "price": 0.2249,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000BONKUSDT",
+      "price": 0.00289,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000FLOKIUSDT",
+      "price": 0.02295,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000LUNCUSDT",
+      "price": 0.04566,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000PEPEUSDT",
+      "price": 0.003868,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "1000RATSUSDT",
+      "price": 0.01694,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "2ZUSDT",
+      "price": 0.02943,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "4STOCKUSDT",
+      "price": 0.00337,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "AAOIUSDT",
+      "price": 73.38,
+      "change": 0.0,
+      "signal": "\u2014"
+    },
+    {
+      "symbol": "AAPLUSDT",
+      "price": 343.46,
+      "change": 0.0,
+      "signal": "\u2014"
+    }
+  ],
   "capitalHistory": [
     {
       "date": "04/05",
